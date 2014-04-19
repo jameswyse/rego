@@ -1,0 +1,23 @@
+{
+  "name": "rego",
+  "version": "0.0.1",
+  "description": "A generic implementation of the service locator pattern",
+  "main": "lib/Registry.js",
+  "scripts": {
+    "test": "echo \"To-Do!\" && exit 1"
+  },
+  "keywords": [
+    "nails",
+    "nailsplugin",
+    "ioc",
+    "service locator",
+    "locator",
+    "registry",
+    "roster"
+  ],
+  "author": "James Wyse <james@jameswyse.net>",
+  "license": "MIT",
+  "repository": "https://github.com/jameswyse/rego",
+  "readmeFilename": "README.md",
+  "dependencies": {}
+}
