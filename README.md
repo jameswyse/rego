@@ -9,34 +9,32 @@ $ npm install --save rego
 ## Usage
 ```javascript
 // Require the module
-var Registry = require('rego');
+var rego = require('rego');
 
-// Set up some fake services
-var twitter  = require('not-twitter');
-var sendgrid = require('not-sendgrid');
+// Create a registry called 'Services'
+var services = rego('Services');
 
-// Create a new Registry
-var service = new Registry('Services');
+// Register a service
+services('myService', myService);
 
-// Register your services
-service.register('twitter', twitter);
-service.register('sendgrid', sendgrid);
-
-// Access services directly:
-service.twitter.tweetStuff();
-
-// Or using `get()`:
-service.get('sendgrid').sendEmail();
+// Get a service
+services('myService');
 ```
 
 ## API
 
-### Registry(name) *(constructor)*
-*Creates a new Registry*
+### Exports
+
+#### rego(name, items)
 
  - **name:** `String` The name of your collection. Defaults to `"Items"`
+ - **list:** `Object` An Object of items to pre-register (optional)
 
-### Registry#get(name)
+ Returns a function with signature: `function(name, item)`. If an item is passed then it will attempt to register the item
+
+#### Registry(name) **(Constructor)**
+
+#### Registry#get(name)
 *Returns a service by name*
 
  - **name:** `String` The name of the service
@@ -66,7 +64,7 @@ service.get('sendgrid').sendEmail();
 
  - **list:** `Array` An Array of services to import.
 
-## Licence
+## License
 
 The MIT License (MIT)
 
