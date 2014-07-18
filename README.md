@@ -33,6 +33,7 @@ services('myService');
  Returns a function with signature: `function(name, item)`. If an item is passed then it will attempt to register the item
 
 #### Registry(name) **(Constructor)**
+*Creates a new Registry*
 
 #### Registry#get(name)
 *Returns a service by name*
